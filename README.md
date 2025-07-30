@@ -1,71 +1,96 @@
-# 🎙️ SpeakGenie: AI Voice Tutor for Kids
 
-**SpeakGenie** is a real-time AI-powered voice tutor designed to help children practice conversational English in a fun and interactive way. It listens, understands, and responds — like a friendly speaking partner!
+# 🎙️ SpeakGenie AI Voice Tutor
 
-Powered by:
-- 🔊 **Vosk** for real-time voice transcription
-- 🧠 **OpenAI GPT (3.5)** for generating replies
-- 🗣️ **pyttsx3** for speaking back responses
+**SpeakGenie** is an interactive AI-powered voice tutor for kids. It listens to what they say, understands with GPT, and speaks back—helping them practice English naturally through fun roleplay scenarios like “school” or “shopping”.
 
 ---
 
-## ✨ Key Features
+## ✨ Features
 
-✅ Real-time speech recognition  
-✅ Friendly and age-appropriate GPT-powered responses  
-✅ Natural voice feedback using text-to-speech  
-✅ Interactive **roleplay scenarios** (e.g., school, shopping, greetings)  
-✅ Easy to extend with new topics or use cases  
+- 🎧 Real-time speech-to-text using [Vosk](https://alphacephei.com/vosk/)
+- 🧠 Smart, friendly responses powered by OpenAI GPT-3.5
+- 🔈 Clear spoken replies using `pyttsx3` TTS engine
+- 🎭 Built-in fun roleplay topics (e.g., school, store) to engage children
 
 ---
 
-## 🚀 Getting Started
+## 🚀 How to Run
 
-### 1. Clone the Repository
 ```bash
-git clone https://github.com/aansheeagrwal/ai-voice-chatbot.git
-cd ai-voice-chatbot
+python app/main.py
 ```
 
-### 2. Install Requirements
+---
+
+## ⚙️ Setup
+
+Install the required dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Set Up Environment Variables
-```ini
-OPENAI_API_KEY=your-openai-api-key
+Add your OpenAI API key in a `.env` file at the root level:
+
 ```
-###4. Run the Tutor
-```bash
-python app/main.py
+OPENAI_API_KEY=sk-xxx
 ```
-## 🛠️ Folder Structure
-```bash
-.
+
+---
+
+## 📁 Project Structure
+
+```
+ai-voice-chatbot/
 ├── app/
-│   ├── main.py               # Main driver for the app
-│   ├── gpt_responder.py      # Handles GPT replies
-│   ├── voice_transcriber.py  # Transcribes user speech using Vosk
-│   ├── tts_engine.py         # Speaks replies aloud
-│   └── roleplay.py           # Roleplay topic prompts
+│   ├── main.py                # Main script to run the voice tutor
+│   ├── gpt_responder.py       # GPT reply logic
+│   ├── voice_transcriber.py   # Vosk-based voice to text
+│   ├── tts_engine.py          # Text-to-speech output
+│   └── roleplay.py            # Prompt flow and topics
 ├── static/
-│   └── audio/                # Placeholder for any static audio/emojis
-├── vosk-model/               # Vosk speech model (you can download smaller/lighter models)
-├── .env                      # Your API key (should NOT be pushed)
-├── requirements.txt          # All Python dependencies
-└── README.md                 # This file
+│   └── audio/
+│       └── emojis.json        # Optional fun elements
+├── vosk-model/                # Offline Vosk language model
+├── .env                       # Your API key (not committed)
+├── .gitignore
+├── requirements.txt
+└── README.md
 ```
 
-##🤖 Tech Stack
-* Python 3.10+
+---
 
-* Vosk for offline voice transcription
+## 💡 Use Case
 
-* OpenAI GPT-3.5 for natural replies
+Perfect for:
+- Young learners practicing English
+- Fun speaking activities at home or school
+- Building confidence in conversational English
 
-* pyttsx3 for voice output
+---
 
-## 👩‍💻 Author
-Anshi Goyal
+## 🤖 Tech Stack
 
+- Python 3.10+
+- Vosk (offline STT)
+- OpenAI GPT (language understanding)
+- pyttsx3 (text-to-speech)
+- dotenv
+
+---
+
+## 📌 Note
+
+This app currently uses OpenAI's GPT. Make sure you have enough quota on your account. You can replace it with Gemini if needed, with a few small tweaks.
+
+---
+
+## 🛠️ Future Ideas
+
+- Web-based version
+- More engaging voice personalities
+- Progress tracking for learners
+
+---
+
+Built with ❤️ for AI learning by [Anshi Goyal](https://github.com/aansheeagrwal)
